@@ -7,7 +7,7 @@ def index(request):
 def categories(request,catid):
     if request.POST:
         print(request.POST)
-    return HttpResponse(f"<h1>Аксессуары по категориям.</h1><p>{catid}</p>")
+    return HttpResponse(f"<h1>Аксессуары по категориямv.</h1><p>{catid}</p>")
 def archive(request, year):
     if int(year)> 2022:
         #raise Http404()
