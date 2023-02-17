@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
 from accessory.views import *
 from django.urls import include
 
@@ -26,3 +25,6 @@ urlpatterns = [
 
 
 handler484 = pageNotFound
+handler403 = pageForbidden
+handler400 = pageBadError
+

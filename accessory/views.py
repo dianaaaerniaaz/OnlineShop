@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound,HttpResponseForbidden, Http404, HttpResponseBadError, HttpResponseServerError
 from django.shortcuts import render, redirect
 
 
@@ -17,4 +17,14 @@ def archive(request, year):
     return HttpResponse(f"<h1>Архив по годам.</h1><p>{year}</p>")
 def  pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>404-Страница не найдена</h1>')
+def  pageForbidden(request, exception):
+    return HttpResponseForbidden('<h1>403-Страница запрещена</h1>')
+
+def  pageBadError(request, exception):
+    return HttpResponseBadError('<h1>400-Плохой запрос</h1>')
+
+
+# if(request.GET):
+#         print(request.GET)
+
 
